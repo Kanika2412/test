@@ -105,13 +105,15 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
-import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
+
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -128,12 +130,13 @@ function Register() {
         });
       }
       console.log("User Registered Successfully!!");
-      toast.success("User Registered Successfully!!", {
+     alert("User Registered Successfully!!", {
         position: "top-center",
       });
+      navigate('/login')
     } catch (error) {
       console.log(error.message);
-      toast.error(error.message, {
+    alert(error.message, {
         position: "bottom-center",
       });
     }
@@ -198,6 +201,7 @@ function Register() {
   );
 }
 export default Register;
+
 
 
 

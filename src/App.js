@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "./App.css";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,7 +10,7 @@ import {
 import Login from "./components/Login";
 import SignUp from "./components/Register";
 
-// import "react-toastify/dist/ReactToastify.css";
+
 import Profile from "./components/Profile";
 import { useState } from "react";
 import { auth } from "./components/firebase";
